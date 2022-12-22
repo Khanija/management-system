@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8">
+<title>Courses</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div align="center">
+		<h1>Adding New Data</h1>
+		<br>
+		<div class="col-sm-4">
+			<form action="#" th:action="@{/Course/save}" th:object="${course}"
+				method="post">
+
+
+				<div align="left">
+
+					<label class="form-label">Course Name</label> <input type="hidden"
+						th:field="*{id}" /> <input type="text" th:field="*{coursename}"
+						class="form-control" placeholder="Course Name" />
+
+				</div>
+				<br>
+
+
+				<div align="left">
+
+					<label class="form-label">Duration</label> <input type="text"
+						th:field="*{duration}" class="form-control" placeholder="Duration" />
+
+				</div>
+
+				<br>
+
+				<button type="submit" class="btn btn-info">Save</button>
+
+
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>
