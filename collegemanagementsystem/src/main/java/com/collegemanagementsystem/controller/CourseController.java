@@ -18,11 +18,11 @@ import com.collegemanagementsystem.domain.Course;
 import com.collegemanagementsystem.service.CourseService;
  
 @Controller
-@RequestMapping("/Course") 
+ 
 public class CourseController {
 @Autowired
   private CourseService service;
- 
+ @RequestMapping("/Course")
     
    /*@GetMapping("/")
     public String viewHomePage(Model model) {
