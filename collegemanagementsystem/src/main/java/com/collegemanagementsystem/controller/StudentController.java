@@ -20,13 +20,13 @@ import com.collegemanagementsystem.service.CourseService;
 import com.collegemanagementsystem.service.StudentService;
  
 @Controller
-@RequestMapping("/Student")
+
 public class StudentController {
 @Autowired
     private StudentService service;
 @Autowired
 private CourseService services;
- 
+ @RequestMapping("/Student")
     
     @GetMapping("/addstudent")
     public String add(Model model) {
@@ -39,7 +39,7 @@ private CourseService services;
     }
     
     
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/Student/save", method = RequestMethod.POST)
     public String saveStudent(@ModelAttribute("student") Student std)
     {
         service.save(std);
@@ -47,7 +47,7 @@ private CourseService services;
     }
     
  
-    @RequestMapping("/edit/{id}")
+    @RequestMapping("/Student/edit/{id}")
     public ModelAndView showEditStudentPage(@PathVariable(name = "id") int id) {
         ModelAndView mav = new ModelAndView("addstudent");
         @SuppressWarnings("unused")
@@ -57,7 +57,7 @@ private CourseService services;
         return mav;
         
     }
-    @RequestMapping("/delete/{id}")
+    @RequestMapping("/Student/delete/{id}")
     public String deleteStudentPage(@PathVariable(name = "id") int id) {
         service.delete(id);
         return "student";
